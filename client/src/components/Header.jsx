@@ -52,7 +52,7 @@ const Header = () => {
             className={({ isActive }) =>
               isActive ? isActiveStyles : isNotActiveStyles
             }
-            to={"/menu"}
+            to={"/Menu"}
           >
             Menu
           </NavLink>
@@ -60,7 +60,7 @@ const Header = () => {
             className={({ isActive }) =>
               isActive ? isActiveStyles : isNotActiveStyles
             }
-            to={"/services"}
+            to={"/Services"}
           >
             Services
           </NavLink>
@@ -68,7 +68,7 @@ const Header = () => {
             className={({ isActive }) =>
               isActive ? isActiveStyles : isNotActiveStyles
             }
-            to={"/aboutus"}
+            to={"/Aboutus"}
           >
             About Us
           </NavLink>

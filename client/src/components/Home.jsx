@@ -19,7 +19,7 @@ const Home = () => {
           </div>
         </div> */}
 
-        <p className="text-[40px] text-headingColor md:text-[72px] py-8 font-sans font-extrabold tracking-wider">
+        <p className="text-[40px]  text-yellow-400  md:text-[72px] py-8 font-sans font-extrabold tracking-wider">
           No Waiting in Lines with{" "}
           <span className="text-red-600">No Queue</span>
         </p>
@@ -39,7 +39,7 @@ const Home = () => {
 
       <div className="py-2 flex-1 flex items-center justify-end relative">
         <img
-          className="absolute top-0 right-0 md:-right-12  w-full h-420 md:w-auto md:h-650"
+          className="absolute top-0 right-0 md:-right-12 rotate-90 w-full h-420 md:w-auto md:h-650"
           src={HeroBg}
           alt=""
         />

@@ -181,6 +181,8 @@ router.get("/getCartItems/:user_id", async (req, res) => {
   })();
 });
 
+
+
 router.post("/create-checkout-session", async (req, res) => {
   const customer = await stripe.customers.create({
     metadata: {

@@ -5,7 +5,7 @@ import {  useDispatch, useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import { fadeInOut } from "./animations";
 import { getAllCartItems, validateUserJWTToken } from "./api";
-import { Alert, MainLoader, CheckOutSuccess, UsersOrder } from "./components";
+import { Alert, MainLoader, CheckOutSuccess, UsersOrder , Menu , Services  , AboutUs} from "./components";
 import { app } from "./config/firebase.config";
 import { Dashboard, Login, Main } from "./containers";
 import { setCartItems } from "./context/actions/cartAction";
@@ -55,6 +55,9 @@ const App = () => {
         <Route path="/dashboard/*" element={<Dashboard />} />
         <Route path="/checkout-success" element={<CheckOutSuccess />} />
         <Route path="/user-orders" element={<UsersOrder />} />
+        <Route path="/Menu" element={<Menu />} />
+        <Route path="/Services" element={<Services/>} />
+        <Route path="/AboutUs" element={<AboutUs/>} />
       </Routes>
 
       {alert?.type && <Alert type={alert?.type} message={alert?.message} />}

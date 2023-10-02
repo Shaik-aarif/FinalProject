@@ -6,20 +6,20 @@ import { setAllUserDetails } from "../context/actions/allUsersAction";
 import DataTable from "./DataTable";
 
 const DBUsers = () => {
-  const allUsers = useSelector((state) => state.allUsers);
-  const dispatch = useDispatch();
+//   const allUsers = useSelector((state) => state.allUsers);
+//   const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (!allUsers) {
-      getAllUsers().then((data) => {
-        dispatch(setAllUserDetails(data));
-      });
-    }
-  }, []);
+//   useEffect(() => {
+//     if (!allUsers) {
+//       getAllUsers().then((data) => {
+//         dispatch(setAllUserDetails(data));
+//       });
+//     }
+//   }, []);
 
-  return (
+return (
     <div className="flex items-center justify-self-center gap-4 pt-6 w-full">
-      <DataTable
+      {/* <DataTable
         columns={[
           {
             title: "Image",
@@ -28,6 +28,7 @@ const DBUsers = () => {
               <img
                 src={rowData.photoURL ? rowData.photoURL : Avatar}
                 className="w-32 h-16 object-contain rounded-md"
+                alt = "userImage"
               />
             ),
           },
@@ -55,35 +56,9 @@ const DBUsers = () => {
         ]}
         data={allUsers}
         title="List of Users"
-        // actions={[
-        //   {
-        //     icon: "edit",
-        //     tooltip: "Edit Data",
-        //     onClick: (event, rowData) => {
-        //       alert("You want to edit " + rowData.productId);
-        //     },
-        //   },
-        //   {
-        //     icon: "delete",
-        //     tooltip: "Delete Data",
-        //     onClick: (event, rowData) => {
-        //       if (
-        //         window.confirm("Are you sure, you want to perform this aciton")
-        //       ) {
-        //         deleteAProduct(rowData.productId).then((res) => {
-        //           dispatch(alertSuccess("Product Deleted "));
-        //           setInterval(() => {
-        //             dispatch(alertNULL());
-        //           }, 3000);
-        //           getAllProducts().then((data) => {
-        //             dispatch(setAllProducts(data));
-        //           });
-        //         });
-        //       }
-        //     },
-        //   },
-        // ]}
-      />
+       
+      /> */}
+      hebwsdibcu
     </div>
   );
 };
