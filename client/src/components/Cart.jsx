@@ -12,7 +12,10 @@ import {
 import { alertNULL, alertSuccess } from "../context/actions/alertActions";
 import { setCartItems } from "../context/actions/cartAction";
 import { setCartOff } from "../context/actions/displayCartAction";
-import {loadStripe} from '@stripe/stripe-js';
+// import {loadStripe} from '@stripe/stripe-js';
+
+
+import {PayButton} from "./index"
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -60,24 +63,24 @@ const Cart = () => {
   // };
 
 
-  const handleCheckOut = () => {
+  // const handleCheckOut = () => {
 
-    console.log("clicked on checkout")
-    const data = {
-      user: user,
-      cart: cart,
-      total: total,
-    };
-    axios
-      .post(`${baseURL}/api/products/create-checkout-session`, { data })
-      .then((res) => {
-        if (res.data.url) {
-          window.location.href = res.data.url;
-        }
-        console.log(res)
-      })
-      .catch((err) => console.log(err));
-  };
+  //   console.log("clicked on checkout")
+  //   const data = {
+  //     user: user,
+  //     cart: cart,
+  //     total: total,
+  //   };
+  //   axios
+  //     .post(`${baseURL}/api/products/create-checkout-session`, { data })
+  //     .then((res) => {
+  //       if (res.data.url) {
+  //         window.location.href = res.data.url;
+  //       }
+  //       console.log(res)
+  //     })
+  //     .catch((err) => console.log(err));
+  // };
 
   return (
     <motion.div
@@ -117,13 +120,19 @@ const Cart = () => {
                 </p>
               </div>
 
-              <motion.button
+              {/* <motion.button
                 {...buttonClick}
                 className="bg-red-500 w-[70%] px-4 py-3 text-xl text-yellow-400 hover:text-red-500 font-semibold hover:bg-yellow-400 drop-shadow-md rounded-2xl"
                 onClick={handleCheckOut}
               >
                 Check Out
-              </motion.button>
+              </motion.button> */}
+              <div
+                >
+                <PayButton
+                cartItems = {cart.cart}
+                ></PayButton>
+                </div>
             </div>
           </>
         ) : (

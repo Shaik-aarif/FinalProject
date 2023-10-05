@@ -26,3 +26,4 @@ export { default as UsersOrder } from "./UsersOrder";
 export { default as Menu } from "./Menu";
 export { default as Services } from "./Services";
 export { default as AboutUs } from "./AboutUs";
+export { default as PayButton } from "./PayButton";
