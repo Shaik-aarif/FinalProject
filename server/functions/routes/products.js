@@ -14,6 +14,7 @@ router.post("/create", async (req, res) => {
       product_category: req.body.product_category,
       product_price: req.body.product_price,
       imageURL: req.body.imageURL,
+      time_to_get_ready: req.body.time_to_get_ready,
     };
 
     const response = await db.collection("products").doc(`/${id}/`).set(data);

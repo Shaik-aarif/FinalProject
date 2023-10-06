@@ -21,8 +21,6 @@ app.use((req, res, next) => {
 });
 
 
-
-
 // firebase credentials
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccountKey),
@@ -38,9 +36,10 @@ app.get("/", (req, res) => {
 const userRoute = require("./routes/user");
 app.use("/api/users", userRoute);
 
-// const Stripe = require("./routes/stripe");
 
-// app.use("/api/stripe" , Stripe);
+
+const Stripe = require("./routes/stripe");
+app.use("/api/stripe" , Stripe);
 const productRoute = require("./routes/products");
 app.use("/api/products", productRoute);
 

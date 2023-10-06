@@ -12,8 +12,8 @@ import {
   BsFillBellFill,
   BsExclamationTriangleFill,
 } from "react-icons/bs";
-import { IoFastFood, IoBasket } from "react-icons/io5";
-import { BiChevronsRight } from "react-icons/bi";
+import { IoFastFood, IoBasket , IoMdTime } from "react-icons/io5";
+import { BiChevronsRight , BiTime } from "react-icons/bi";
 import { HiCurrencyRupee } from "react-icons/hi2";
 
 export {
@@ -32,6 +32,7 @@ export {
   BsExclamationTriangleFill,
   IoBasket,
   BiChevronsRight,
+  BiTime,
   FcClearFilters,
   FaArrowLeft,
   HiCurrencyRupee,

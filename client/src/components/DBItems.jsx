@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteAProduct, getAllProducts } from "../api";
-import { HiCurrencyRupee } from "../assets/icons";
+import { HiCurrencyRupee  , BiTime} from "../assets/icons";
 import { DataTable } from "../components";
 import { alertNULL, alertSuccess } from "../context/actions/alertActions";
 import { setAllProducts } from "../context/actions/productActions";
@@ -10,7 +10,7 @@ const DBItems = () => {
   const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
   return (
-    <div className="flex items-center justify-self-center gap-4 pt-6 w-full">
+    <div className="flex items-center justify-self-center gap-4 pt-6 w-full ">
       <DataTable
         columns={[
           {
@@ -32,26 +32,38 @@ const DBItems = () => {
             field: "product_category",
           },
           {
+            title : "Time(Minutes)", 
+            field : "time_to_get_ready",
+            render: (rowData) => (
+            <p className="text-xl font-semibold text-textColor  flex items-center  gap-3 ">
+            <BiTime className="text-red-400" />
+            {parseInt(rowData.time_to_get_ready)}
+            </p>
+            ),
+          },
+          {
             title: "Price",
             field: "product_price",
             render: (rowData) => (
-              <p className="text-xl font-semibold text-textColor flex items-center justify-center ">
+
+              <p className="text-xl font-semibold text-textColor flex items-center gap-3">
                 <HiCurrencyRupee className="text-red-400" />
                 {parseFloat(rowData.product_price).toFixed(2)}
               </p>
+              
             ),
           },
         ]}
         data={products}
         title="List of Products"
         actions={[
-          {
-            icon: "edit",
-            tooltip: "Edit Data",
-            onClick: (event, rowData) => {
-              alert("You want to edit " + rowData.productId);
-            },
-          },
+          // {
+          //   icon: "edit",
+          //   tooltip: "Edit Data",
+          //   onClick: (event, rowData) => {
+          //     alert("You want to edit " + rowData.productId);
+          //   },
+          // },
           {
             icon: "delete",
             tooltip: "Delete Data",

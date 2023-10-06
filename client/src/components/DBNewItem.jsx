@@ -24,6 +24,7 @@ import { setAllProducts } from "../context/actions/productActions";
 const DBNewItem = () => {
   const [itemName, setItemName] = useState("");
   const [price, setPrice] = useState("");
+  const [time, setTime] = useState("");
   const [category, setCategory] = useState(null);
   const [isLoading, setisLoading] = useState(false);
   const [progress, setProgress] = useState(null);
@@ -83,6 +84,7 @@ const DBNewItem = () => {
       product_category: category,
       product_price: price,
       imageURL: imageDownloadURL,
+      time_to_get_ready :time,
     };
     addNewProduct(data).then((res) => {
       console.log(res);
@@ -93,6 +95,7 @@ const DBNewItem = () => {
       setImageDownloadURL(null);
       setItemName("");
       setPrice("");
+      setTime(""),
       setCategory(null);
     });
     getAllProducts().then((data) => {
@@ -131,6 +134,12 @@ const DBNewItem = () => {
           placeHolder={"Item price here"}
           stateFunc={setPrice}
           stateValue={price}
+        />
+        <InputValueField
+          type="number"
+          placeHolder={"Time to get ready in minutes"}
+          stateFunc={setTime}
+          stateValue={time}
         />
 
         <div className="w-full bg-card backdrop-blur-md h-370 rounded-md border-2 border-dotted border-gray-300 cursor-pointer">
