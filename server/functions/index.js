@@ -38,8 +38,8 @@ app.use("/api/users", userRoute);
 
 
 
-const Stripe = require("./routes/stripe");
-app.use("/api/stripe" , Stripe);
+// const Stripe = require("./routes/stripe");
+// app.use("/api/stripe" , Stripe);
 const productRoute = require("./routes/products");
 app.use("/api/products", productRoute);
 

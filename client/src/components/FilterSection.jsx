@@ -58,12 +58,12 @@ export const FilterCard = ({ data, index, category, setCategory }) => {
     >
       <div
         className={`w-10 h-10 rounded-full shadow-md flex items-center justify-center group-hover:bg-primary ${
-          category === data.category ? "bg-primary" : "bg-red-500"
+          category === data.category ? "bg-yellow-400" : "bg-red-400"
         }`}
       >
         <IoFastFood
           className={`${
-            category === data.category ? "text-red-500" : "text-primary"
+            category === data.category ? "text-black-500" : "text-primary"
           } group-hover:text-red-500`}
         />
       </div>
