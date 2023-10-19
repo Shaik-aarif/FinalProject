@@ -2,6 +2,7 @@ import React from 'react'
 import Header from './Header'; 
 import HomeSLider from './HomeSLider';
 import FilterSection from './FilterSection';
+import Footer from './Footer';
 const Menu = () => {
   return (
     <>
@@ -13,9 +14,12 @@ const Menu = () => {
         <HomeSLider />
         <FilterSection />
     </div>
+        <Footer/>
     </main>
     </>
   )
 }
 
 export default Menu;
+
+

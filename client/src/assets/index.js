@@ -17,6 +17,12 @@ export { default as Time } from "./img/serveIMG/time.svg";
 export { default as Web } from "./img/serveIMG/web.svg";
 export { default as cardIMG } from "./img/card_img.png";
 export { default as Tick } from "./img/tick.png";
+export { default as MainIMG } from "./img/MainIMG.png";
+export { default as Faizu } from "./img/Faizu.jpg";
+export { default as Bot } from "./img/bot.jpg";
+export { default as Arif } from "./img/arif.jpg";
+export { default as AboutIMG } from "./img/AboutIMG.jpg";
+export { default as Us} from "./img/Us.jpg";
 
 
 

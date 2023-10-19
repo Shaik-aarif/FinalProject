@@ -4,6 +4,7 @@ import {
   FaCloudUploadAlt,
   FaCheck,
   FaArrowLeft,
+  FaGithubSquare
 } from "react-icons/fa";
 import { FcGoogle, FcClearFilters } from "react-icons/fc";
 import { MdShoppingCart, MdLogout, MdSearch, MdDelete } from "react-icons/md";
@@ -17,6 +18,7 @@ import { BiChevronsRight , BiTime } from "react-icons/bi";
 import { HiCurrencyRupee } from "react-icons/hi2";
 
 export {
+  FaGithubSquare,
   FaEnvelope,
   FaLock,
   FcGoogle,

@@ -29,6 +29,7 @@ export { default as AboutUs } from "./AboutUs";
 export { default as PayButton } from "./PayButton";
 export { default as Info } from "./Info";
 export {default as PaymentForm}  from "./PaymentForm";
+export {default as Footer}  from "./Footer";
 
 
 
