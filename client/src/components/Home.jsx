@@ -3,8 +3,10 @@ import React from "react";
 import { buttonClick, staggerFadeInOut } from "../animations";
 import { Delivery, HeroBg } from "../assets";
 import { randomData } from "../utils/styles";
+import {useNavigate} from 'react-router-dom';
 
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <motion.div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 ">
       <div className="flex flex-col items-start justify-start gap-6">
@@ -18,6 +20,7 @@ const Home = () => {
             />
           </div>
         </div> */}
+        
 
         <p className="text-[40px]  text-yellow-400  md:text-[72px] py-8 font-sans font-extrabold tracking-wider">
           No Waiting in Lines with{" "}
@@ -31,6 +34,7 @@ const Home = () => {
         </p>
         <motion.button
           {...buttonClick}
+          onClick={()=>navigate("/Menu")}
           className="bg-gradient-to-bl from-red-400 to-red-600 px-4 py-2 rounded-xl text-black text-base font-semibold"
         >
           Order Now

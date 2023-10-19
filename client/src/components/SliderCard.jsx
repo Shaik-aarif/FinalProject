@@ -16,6 +16,7 @@ const SliderCard = ({ data, index }) => {
     addNewItemToCart(user?.user_id, data).then((res) => {
       getAllCartItems(user?.user_id).then((items) => {
         dispatch(setCartItems(items));
+        console.log(data);
       });
       setInterval(() => {
         dispatch(alertNULL());

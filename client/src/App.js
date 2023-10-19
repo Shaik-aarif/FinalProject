@@ -5,11 +5,12 @@ import {  useDispatch, useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import { fadeInOut } from "./animations";
 import { getAllCartItems, validateUserJWTToken } from "./api";
-import { Alert, MainLoader, CheckOutSuccess, UsersOrder , Menu , Services  , AboutUs} from "./components";
+import { Alert, MainLoader, CheckOutSuccess, UsersOrder , Menu , Services  , AboutUs, Info   , PaymentForm} from "./components";
 import { app } from "./config/firebase.config";
 import { Dashboard, Login, Main } from "./containers";
 import { setCartItems } from "./context/actions/cartAction";
 import { setUserDetails } from "./context/actions/userActions";
+// import PaymentForm from "./components";
 
 const App = () => {
   const firebaseAuth = getAuth(app);
@@ -58,6 +59,10 @@ const App = () => {
         <Route path="/Menu" element={<Menu />} />
         <Route path="/Services" element={<Services/>} />
         <Route path="/AboutUs" element={<AboutUs/>} />
+        <Route path="/info" element={<Info/>} />
+        <Route path="/PaymentForm" element={<PaymentForm/>} />
+
+
       </Routes>
 
       {alert?.type && <Alert type={alert?.type} message={alert?.message} />}

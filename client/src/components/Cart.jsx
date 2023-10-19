@@ -8,6 +8,7 @@ import {
   BiChevronsRight,
   FcClearFilters,
   HiCurrencyRupee,
+  BiTime,
 } from "../assets/icons";
 import { alertNULL, alertSuccess } from "../context/actions/alertActions";
 import { setCartItems } from "../context/actions/cartAction";
@@ -22,13 +23,22 @@ const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user);
   const [total, setTotal] = useState(0);
+  const [time, setTime] = useState(0);
+  
 
   useEffect(() => {
+    let ttc = 0 ;
     let tot = 0;
     if (cart) {
       cart.map((data) => {
         tot = tot + data.product_price * data.quantity;
         setTotal(tot);
+      });
+    }
+    if (cart) {
+      cart.map((data) => {
+        ttc = Math.max(ttc , data.time_to_get_ready);
+        setTime(ttc);
       });
     }
   }, [cart]);
@@ -111,7 +121,7 @@ const Cart = () => {
                   <CartItemCard key={i} index={i} data={item} />
                 ))}
             </div>
-            <div className="bg-zinc-800 rounded-t-[60px] w-full h-fill flex flex-col items-center justify-center px-4 py-6 gap-24">
+            <div className="bg-zinc-800 rounded-t-[60px] w-full h-fill flex flex-col items-center justify-center px-4 py-6 gap-8">
               <div className="w-full flex items-center justify-evenly">
                 <p className="text-3xl text-gray-300 font-semibold">Total</p>
                 <p className="text-3xl text-yellow-500 font-semibold flex items-center justify-center gap-1">
@@ -119,6 +129,15 @@ const Cart = () => {
                   {total}
                 </p>
               </div>
+              <div className="w-full flex items-center justify-evenly">
+                <p className="text-3xl text-gray-300 font-semibold">Estimated Time</p>
+                <p className="text-3xl text-yellow-500 font-semibold flex items-center justify-center gap-1">
+                  <BiTime className="text-red-500" />
+                  {time} minutes
+                </p>
+              </div>
+
+              
 
               {/* <motion.button
                 {...buttonClick}
@@ -194,6 +213,13 @@ export const CartItemCard = ({ index, data }) => {
           <span className="text-sm block capitalize text-gray-300">
             {data?.product_category}
           </span>
+        </p>
+        {/* <p className="text-sm  text-red-500 flex items-center justify-center gap-1 ml-auto">
+          <BiTime className="text-red-500" />
+          {parseInt(data?.time_to_get_ready)}
+        </p> */}
+        <p className="text-sm flex items-center justify-center gap-1 font-semibold text-red-500 ml-auto">
+          <BiTime className="text-red-500" /> {parseInt(data?.time_to_get_ready)}
         </p>
         <p className="text-sm flex items-center justify-center gap-1 font-semibold text-red-500 ml-auto">
           <HiCurrencyRupee className="text-red-500" /> {itemTotal}

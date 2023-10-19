@@ -124,7 +124,7 @@ const Header = () => {
 
                   <Link
                     className=" hover:text-red-500 text-xl text-textColor"
-                    to={"/profile"}
+                    to={"/info"}
                   >
                     My Profile
                   </Link>

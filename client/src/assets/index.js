@@ -15,6 +15,8 @@ export { default as Rating } from "./img/serveIMG/rating.svg";
 export { default as Seo } from "./img/serveIMG/seo.svg";
 export { default as Time } from "./img/serveIMG/time.svg";
 export { default as Web } from "./img/serveIMG/web.svg";
+export { default as cardIMG } from "./img/card_img.png";
+export { default as Tick } from "./img/tick.png";
 
 
 

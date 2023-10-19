@@ -31,15 +31,13 @@ app.get("/", (req, res) => {
   return res.send("hello word");
 });
 
-// app.use("/api/stripe" , stripe);
+
 
 const userRoute = require("./routes/user");
 app.use("/api/users", userRoute);
 
 
 
-// const Stripe = require("./routes/stripe");
-// app.use("/api/stripe" , Stripe);
 const productRoute = require("./routes/products");
 app.use("/api/products", productRoute);
 
